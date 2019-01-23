@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="shortcut icon" type="images/png" href="/UI/favicon.png">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css">
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+    <title>Politico</title>
+</head>
+<body>
+    <main class="signup">
+                <form id="signup">
+                <div class="container">
+                    <header class="header">
+                        <h1>Sign Up</h1>
+                        <a href="index.html"><img src="/UI/logo.png" alt="logo"></a>
+                    </header>
+                    <label for="firstname">FirstName</label>
+                    <input type="text" value=""  name="fname" required/>
+
+                    <label for="lastname">LastName</label>
+                    <input type="text" value=""  name="lname" required/>
+
+                    <label for="email">Email</label>
+                    <input type="email" value=""  name="email" required/>
+
+                    <label for="phone">Phone No:</label>
+                    <input type="tel" value=""  name="phone" pattern="[0-9]{3}-[0-9]{4}-[0-9]{4}" required/>
+
+                    <label for="password">Password</label>
+                    <input type="password" value=""  name="password" required/>
+
+                    <button type="submit" form="signup" value="Submit">Submit<i class="fas  fa-angle-right"></i></button>
+                    <p>Have an account?</p>
+                    <button  class="access" type="button" onclick="window.location.href='/index.html'">Sign In<i class="fas  fa-angle-right"></i></button>
+                </div>
+                </form>
+        </main>
+    
+</body>
+</html>
