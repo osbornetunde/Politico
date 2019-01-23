@@ -27,7 +27,7 @@ html {
 }
 
 .firstpage {
-    background: url('/UI/voting.jpg') 100% 100%/cover no-repeat;
+    background: url('UI/voting.jpg') 100% 100%/cover no-repeat;
 }
 
 
