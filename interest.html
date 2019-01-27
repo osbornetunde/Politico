@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="shortcut icon" type="images/png" href="UI/favicon.png">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css">
+    <link rel="stylesheet" href="admin_style.css" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+    <title>Politico</title>
+</head>
+<body>
+    <section id="sideMenu">
+                <div class="toggle-btn" onclick="toggleSidebar()">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            <nav>
+                <a href="user_page.html"><i class="fa fa-home"></i>Dashboard</a>
+                <a href="us_party.html" class="dropbtn"><i class="fa fa-user-friends"></i>Parties</a>
+                <a href="candidates.html"><i class="fa fa-user"></i>Candidates</a>
+                <a href="vote_page.html"><i class="fa fa-vote-yea"></i>Vote</a>
+                <a class="active" href="interest.html"><i class="fa fa-user-check"></i>Contest</a>
+                <a href="/index.html"><i class="fa fa-sign-out-alt"></i>Sign Out</a>
+            </nav>
+        </section>
+        <header>
+            <div class="search-area">
+                <i class="fa fa-search"></i>
+                <input type="text" name="" value="">
+            </div>
+        </header>
+    <section id="content-area">
+        <div class="heading">
+            <h1>Create Office</h1>
+            <p>Create a political Office</p>
+        </div>
+        <form id="interest">
+                <div class="containers">
+                    <label for="firstname">FirstName</label>
+                    <input type="text" value=""  name="fname" required/>
+
+                    <label for="lastname">LastName</label>
+                    <input type="text" value=""  name="lname" required/>
+
+                    <label for="select">Select party</label>
+                    <select>
+                        <option value="ann">ANN</option>
+                        <option value="ypp">YPP</option>
+                        <option value="apc">APC</option>
+                        <option value="pdp">PDP</option>
+                    </select>
+                    <label for="select">Select Office</label>
+                    <select>
+                        <option value="president">President</option>
+                        <option value="senator">Senator</option>
+                        <option value="representative">Representative</option>
+                        <option value="govenor">Govenor</option>
+                    </select>
+                    <label for="fileupload"> Select a image to upload</label> 
+                    <input type="file" name="fileupload" value="fileupload" id="fileupload"> 
+                    <button type="submit" form="#interest" value="Submit">Create</button>
+                </div>
+        </form>
+    </section>
+<script src="app.js"></script>
+</body>
+</html>
+
