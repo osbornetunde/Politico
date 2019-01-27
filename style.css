@@ -1,8 +1,7 @@
 :root{
     --bg-white: #fff;
     --bg-blue: #7efaff;
-    --bg-black: rgba(0, 0, 0, 0.5);
-
+    --blueDark: #3161a3;
 }
 
 *{
@@ -10,25 +9,38 @@
     margin: 0;
 }
 
+html, body {
+    height: 100%;
+}
+
 html {
     height: 100%;
     font-family: 'Montserrat', sans-serif;
+    background: url('UI/voting.jpg') no-repeat center center fixed; 
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
 }
 
-
-.signin, .signup{
-    max-width: 100%;
-    background-image: linear-gradient(135deg,  #7efaff 20%, #ebfffb 40%, #ebfffb 80%, #7efaff 100%);
+.firstpage, .reset {
     padding: 100px 0;
+}
+
+.reset {
+    width: 100%;
+    background: linear-gradient(135deg,  #7efaff 20%, #ebfffb 40%, #ebfffb 80%, #7efaff 100%) fixed;
+    height: 100%;
 }
 
 .signup {
     padding: 45px 0;
 }
 
-.firstpage {
-    background: url('UI/voting.jpg') 100% 100%/cover no-repeat;
-}
+/* .firstpage {
+    background: url('UI/voting.jpg') no-repeat center center fixed;
+    background-size: cover;
+} */
 
 
 
@@ -47,27 +59,23 @@ form {
 }
 
 .container > label, a, p  {
-    color: var(--bg-black);
+    color: var(--blueDark);
     text-decoration: none;
     font-size: 0.9rem;
 }
 
- input[type=password] + a {
-        font-size: 0.7em;
-        color: rgba(0, 0, 0, 0.3)
-}
 
 .header {
-    padding: 5px 5px;
+    padding: 0px 5px 0px 0px;
     display: flex;
     justify-content: space-between;
-    padding-left: 0;
     align-items: center;
 }
 
 .header > h1 {
     font-size: 1rem;
     font-weight: 900;
+    color: var(--blueDark)
 }
 
 img {
@@ -75,7 +83,9 @@ img {
     height: 5rem;
 }
 
-/* Full-width input fields */
+
+
+/*============= Full-width input fields========== */
 input[type=text],
 input[type=email], 
 input[type=password], 
@@ -95,6 +105,15 @@ input[type=tel] {
   input[type=tel]:focus,
   button:focus {
     outline: 0;
+}
+
+input[type=password] + a {
+    font-size: 0.7em;
+    color: rgba(0, 0, 0, 0.3)
+}
+
+input[type=password] + a:hover{
+color: var(--blueDark);
 }
 
 
@@ -136,8 +155,12 @@ input[type=tel] {
   }
 
   button:last-child > i {
-      color: #000;
+      color: var(--bg-blue);
   }
+
+  .reset button .fa-angle-right {
+    color: var(--bg-white);
+}
 
   /*=================Responsiveness For Sign In Page============*/
 @media only screen and (max-width:600px){

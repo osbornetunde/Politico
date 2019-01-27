@@ -12,6 +12,8 @@
 
 *{
     box-sizing: border-box;
+    margin: 0px;
+    padding: 0px;
 }
 
 body {
@@ -23,12 +25,34 @@ body {
     background: var(--skyblue);
     width: 280px;
     position: absolute;
+    /* position: fixed; */
     top: 0;
     bottom: 0;
+    left: -280px;
+    transition: all 500ms linear;
+}
+
+#sideMenu.active {
+    left: 0px;
+}
+#sideMenu .toggle-btn {
+    position: absolute;
+    left: 310px;
+    top: 20px;
+}
+
+#sideMenu .toggle-btn span {
+    display: block;
+    width: 30px;
+    height: 5px;
+    background: var(--blueDark);
+    margin: 5px 0px;
+    border-radius: 2px;
 }
 
 nav {
     padding-top: 100px;
+    overflow: hidden;
 }
 
 nav  a {
@@ -99,14 +123,14 @@ nav a.active .fa, nav a:hover .fa {
 }
 
 header {
-    margin-left: 280px;
     padding: 10px;
     background: #fff;
+    height: 60px;
 }
 
 .search-area {
-    display: inline-block;
-    width: 50%;
+    float: right;
+    width: 35%;
 }
 
 .search-area .fa{
@@ -134,14 +158,6 @@ header {
 }
 
 
-img {
-    float: right;
-    background-size: cover;
-    width: 100px;
-    height: 55px;
-}
-
-
 textarea:focus, input:focus, input:active {
     background: var(--greyLightBG);
     outline: none;
@@ -151,8 +167,13 @@ textarea:focus, input:focus, input:active {
 /*=================Content Area=============*/
 
 #content-area {
-    margin-left: 280px;
+    /* margin-left: 280px; */
     padding: 15px;
+    transition: all 500ms linear;
+}
+
+#content-area.active {
+    margin-left: 280px;
 }
 
 .heading h1 { 
@@ -197,15 +218,7 @@ thead {
      0px 20px 20px rgba(0,0,0,0.05),
      0px 30px 20px rgba(0,0,0,0.05);
 }
-/* #title {
-    font-weight: 400;
-    font-size: 20px;
-    text-align: left;
-} */
-   
-/* #titleRow {
-    margin: 30px;
-} */
+
 #titleRow .titles{
     background: var(--blue);
     text-transform: uppercase;
@@ -213,8 +226,6 @@ thead {
     font-weight: 600;
     font-size: 13px;
     padding: 10px 0;
-    /* text-align: left; */
-    /* padding: 12px 35px; */
 }
 
 
@@ -225,7 +236,92 @@ thead {
 
  td {
     border: 1px solid #eee;
-    padding: 12px 35px;
+    padding: 10px 35px;
     border-collapse: collapse;
 }
 
+td img {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    margin-right: 5px;
+}
+
+td button, .containers button {
+    width: 60px;
+    height: 30px;
+    background-color: var(--blue);
+    border-radius: 5px;
+    color: var(--greyLightfont);
+    outline: none;
+}
+
+td button.delete {
+    background: rgba(255, 0, 0, 0.8);
+    color: var(--greyLightBG);
+}
+
+/*==============Create Page==============*/
+.containers {
+    width: 50%;
+    height: 50%;
+    background-color: var(--bg-white);
+    margin: 0 auto;
+    max-width: 290px;
+    padding: 20px;
+    border-radius: 5px;
+}
+
+.containers > label, a, p  {
+    color: var(--blueDark);
+    text-decoration: none;
+    font-size: 0.9rem;
+}
+
+input[type=text], textarea {
+    width: 100%;
+    padding: 10px;
+    margin: 5px 0 8px 0;
+    display: inline-block;
+    border: 1px solid #13abc4;
+    box-shadow: 1px 1px 1px 0 rgb(230, 229, 229) inset;
+    border-radius: 1rem;
+  }
+
+input[type=text]:focus,
+textarea:focus {
+    outline: 0;
+}
+
+input[type=file] {
+    color: var(--blueDark);
+    margin-bottom: 10px;
+}
+
+.containers button {
+    width: 80px;
+    margin-left: 80px;
+}
+
+.containers select {
+    width: 230px;
+    height: 35px;
+    border: 1px solid var(--blue);
+    margin: 10px;
+    color: var(--blueDark);
+    outline: none;
+}
+
+.containers select > option {
+    background: var(--greyLightBG);
+    color: var(--blueDark);
+}
+
+
+  /*===============media Query==========*/
+
+@media(max-width:568px){
+    .search-area {
+        display: none;
+    }
+}

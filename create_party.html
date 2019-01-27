@@ -12,16 +12,16 @@
 </head>
 <body>
     <section id="sideMenu">
-        <div class="toggle-btn" onclick="toggleSidebar()">
-            <span></span>
-            <span></span>
-            <span></span>
-        </div>
+            <div class="toggle-btn" onclick="toggleSidebar()">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
         <nav>
-            <a class="active" href="#"><i class="fa fa-home"></i>Dashboard</a>
+            <a href="admin_page.html"><i class="fa fa-home"></i>Dashboard</a>
             <a href="#"  onclick="handleDropdown1()" class="dropbtn"><i class="fa fa-user-friends"></i>Party<i class="fas fa-angle-right"></i></a>
                 <div id="dropdown1"  class="dropdown-content">
-                    <a href="create_party.html">Create Party</a>
+                    <a class="active" href="create_party.html">Create Party</a>
                     <a href="edit_party.html">Edit Party</a>
                     <a href="delete_party.html">Delete Party</a>
                 </div>
@@ -42,11 +42,18 @@
 
     <section id="content-area">
         <div class="heading">
-            <h1>Dashboard</h1>
-            <p>Welcome to Politico</p>
+            <h1>Create Party</h1>
+            <p>Create a political party</p>
         </div>
-
-        
+        <form id="create_party">
+                <div class="containers">
+                    <label for="text">Enter party name</label>
+                    <input type="text" value=""  name="party_name"/>
+                    <label for="details">Enter party details</label>
+                    <textarea rows="20" cols="20"></textarea>
+                    <button type="submit" form="#create_party" value="Submit">Create</button>
+                </div>
+            </form>
     </section>
 <script src="app.js"></script>
 </body>
