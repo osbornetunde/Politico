@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="shortcut icon" type="images/png" href="UI/favicon.png">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css">
+    <link rel="stylesheet" href="admin_style.css" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+    <title>Politico</title>
+</head>
+<body>
+    <section id="sideMenu">
+            <div class="toggle-btn" onclick="toggleSidebar()">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        <nav>
+            <a class="active" href="user_page.html"><i class="fa fa-home"></i>Dashboard</a>
+            <a href="us_party.html" class="dropbtn"><i class="fa fa-user-friends"></i>Parties</a>
+            <a href="candidates.html"><i class="fa fa-user"></i>Candidates</a>
+            <a href="vote_page.html"><i class="fa fa-vote-yea"></i>Vote</a>
+            <a href="interest.html"><i class="fa fa-user-check"></i>Contest</a>
+            <a href="/index.html"><i class="fa fa-sign-out-alt"></i>Sign Out</a>
+        </nav>
+    </section>
+    <header>
+        <div class="search-area">
+            <i class="fa fa-search"></i>
+            <input type="text" name="" value="">
+        </div>
+    </header>
+
+    <section id="content-area">
+        <div class="heading">
+            <h1>Dashboard</h1>
+            <p>Your Candidates</p>
+        </div>
+            <div class="container">
+            <table id="myTable" cellspacing="2">
+                <thead>
+                <tr id="titleRow">
+                    <th class="titles">Name</th>
+                    <th class="titles">Party</th>
+                    <th class="titles">Office</th>
+                </tr>
+                </thead>
+                <tbody id="tbody">
+                        <tr>
+                            <td>
+                                <img src="UI/durotoye.jpeg">
+                                Fela Durotoye</td>
+                            <td>ACN</td>
+                            <td>Presidential</td>
+                            </tr>
+                        <tr>
+                    <td>
+                        <img src="UI/jimi.jpeg">
+                        Jimi Agbaje</td>
+                    <td>PDP</td>
+                    <td>Govenor</td>
+                    </tr>
+                    <tr>
+                    <td>
+                        <img src="UI/contestant1.jpg">
+                        John Doe</td>
+                    <td>PDP</td>
+                    <td>Senator</td>
+                    </tr>
+                    <tr>
+                    <td>
+                        <img src="UI/contestant2.jpg">
+                        Jack Bill</td>
+                    <td>YPP</td>
+                    <td>Representative</td>
+                    </tr>
+                </tbody>
+            </table>
+            </div>
+    </section>
+<script src="app.js"></script>
+</body>
+</html>
+
