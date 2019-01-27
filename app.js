@@ -24,6 +24,12 @@ window.onclick = function(event) {
 };
 
 
+function toggleSidebar() {
+  document.getElementById("sideMenu").classList.toggle('active');
+  document.getElementById("content-area").classList.toggle('active');
+}
+
+
 
 
 
