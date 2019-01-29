@@ -103,6 +103,7 @@ nav a.active .fa, nav a:hover .fa {
 }
 
 header {
+    width: 100vw;
     padding: 10px;
     background: #fff;
     height: 60px;
@@ -156,8 +157,8 @@ thead {
 #myTable {
   border-radius: 5px;
   padding: 10px;
-  width: 700px;
-  min-width: 400px;
+  width: 60vw;
+  min-width: 50vw;
   margin: 0 20px;
   background: var(--greyLightBG);
   color: var(--blueDark);
@@ -271,8 +272,13 @@ input[type=file] {
 
   /*===============media Query==========*/
 
-@media(max-width:568px){
-    .search-area {
+@media only screen and (max-width:760px), 
+(min-device-width: 768px) and (max-device-width: 1024px){
+    header {
+        width: 100%;
+    }
+    
+    header img {
         display: none;
     }
 
@@ -292,7 +298,7 @@ input[type=file] {
 
     #sideMenu .toggle-btn {
         position: absolute;
-        left: 310px;
+        left: 290px;
         top: 20px;
     }
     
@@ -307,11 +313,59 @@ input[type=file] {
 
     #content-area {
         margin-left: 0;
-        padding: 15px;
+        padding: 0px;
         transition: all 500ms linear;
+    }
+
+    .heading {
+        margin-left: 10px;
     }
     
     #content-area.active {
         margin-left: 280px;
     }
+
+    .container {
+        margin: 0;
+    }
+
+    #myTable {
+        margin: 0;
+        width: 100vw;
+        min-width: 30vw;
+    }
+    
+
+        /* Force table to not be like tables anymore */
+        table, thead, tbody, th, td, tr { 
+            display: block; 
+        }
+        
+        /* Hide table headers (but not display: none;, for accessibility) */
+        thead tr { 
+            position: absolute;
+            top: -9999px;
+            left: -9999px;
+        }
+        
+        tr { border: 1px solid #ccc; }
+        
+        td { 
+            /* Behave  like a "row" */
+            border: none;
+            border-bottom: 1px solid #eee; 
+            position: relative;
+            padding-left: 30%; 
+        }
+        
+        td:before { 
+            /* Now like a table header */
+            position: absolute;
+            /* Top/left values mimic padding */
+            top: 6px;
+            left: 6px;
+            width: 100vw; 
+            /* padding-right: 10px;  */
+            white-space: nowrap;
+        }
 }
