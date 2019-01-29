@@ -6,6 +6,7 @@
     --blue: #13abc4;
     --greyDarkfont: #6C7882;
     --greyLightfont: #BBC1CD;
+    --bg-white: #fff;
     --orange: #F4B320;
     --purple: #744BCE;
 }
@@ -24,31 +25,11 @@ body {
 #sideMenu {
     background: var(--skyblue);
     width: 280px;
-    position: absolute;
-    /* position: fixed; */
+    position: fixed;
     top: 0;
     bottom: 0;
-    left: -280px;
-    transition: all 500ms linear;
 }
 
-#sideMenu.active {
-    left: 0px;
-}
-#sideMenu .toggle-btn {
-    position: absolute;
-    left: 310px;
-    top: 20px;
-}
-
-#sideMenu .toggle-btn span {
-    display: block;
-    width: 30px;
-    height: 5px;
-    background: var(--blueDark);
-    margin: 5px 0px;
-    border-radius: 2px;
-}
 
 nav {
     padding-top: 100px;
@@ -123,51 +104,23 @@ nav a.active .fa, nav a:hover .fa {
 }
 
 header {
+    width: 100vw;
     padding: 10px;
     background: #fff;
     height: 60px;
 }
 
-.search-area {
+header img {
+    width: 5rem;
+    height: 3rem;
     float: right;
-    width: 35%;
-}
-
-.search-area .fa{
-    color: var(--blue);
-}
-
-.search-area input[type="text"] {
-    background: #fff;
-    border: none;
-    font-size: 1.3rem;
-    color: var(--softgreen);
-    padding: 10px;
-    font-weight: 100;
-    width: 80%;
-    transition: all 0.5s ease-in-out;
-}
-
-.search-area input[type="text"]:hover {
-        background: var(--greyLightBG);
-}
-
-.user-area  {
-    display: inline;
-    vertical-align: top;
-}
-
-
-textarea:focus, input:focus, input:active {
-    background: var(--greyLightBG);
-    outline: none;
 }
 
 
 /*=================Content Area=============*/
 
 #content-area {
-    /* margin-left: 280px; */
+    margin-left: 280px;
     padding: 15px;
     transition: all 500ms linear;
 }
@@ -205,8 +158,8 @@ thead {
 #myTable {
   border-radius: 5px;
   padding: 10px;
-  width: 700px;
-  min-width: 400px;
+  width: 60vw;
+  min-width: 50vw;
   margin: 0 20px;
   background: var(--greyLightBG);
   color: var(--blueDark);
@@ -317,11 +270,128 @@ input[type=file] {
     color: var(--blueDark);
 }
 
+/*=========tab in vote page============*/
+
+.tablink {
+    background-color: var(--bg-white);
+    color: var(--blueDark);
+    float: left;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 10px 9px;
+    font-size: 12px;
+    width: 20%;
+    border-radius: 15px 15px 0px 0px;
+  }
+  .tablink:hover {
+    background-color: var(--skyblue);
+  }
+  
+  .tabcontent {
+    /* color: yellow; */
+    display: none;
+    padding: 50px;
+    text-align: center;
+  }
+
 
   /*===============media Query==========*/
 
-@media(max-width:568px){
-    .search-area {
+@media only screen and (max-width:760px), 
+(min-device-width: 768px) and (max-device-width: 1024px){
+    header {
+        width: 100%;
+    }
+    
+    header img {
         display: none;
     }
+
+    #sideMenu {
+        background: var(--skyblue);
+        width: 280px;
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: -280px;
+        transition: all 500ms linear;
+    }
+
+    #sideMenu.active {
+        left: 0px;
+    }
+
+    #sideMenu .toggle-btn {
+        position: absolute;
+        left: 290px;
+        top: 20px;
+    }
+    
+    #sideMenu .toggle-btn span {
+        display: block;
+        width: 30px;
+        height: 5px;
+        background: var(--blueDark);
+        margin: 5px 0px;
+        border-radius: 2px;
+    }
+
+    #content-area {
+        margin-left: 0;
+        padding: 0px;
+        transition: all 500ms linear;
+    }
+
+    .heading {
+        margin-left: 10px;
+    }
+    
+    #content-area.active {
+        margin-left: 280px;
+    }
+
+    .container {
+        margin: 0;
+    }
+
+    #myTable {
+        margin: 0;
+        width: 100vw;
+        min-width: 30vw;
+    }
+    
+
+        /* Force table to not be like tables anymore */
+        table, thead, tbody, th, td, tr { 
+            display: block; 
+        }
+        
+        /* Hide table headers (but not display: none;, for accessibility) */
+        thead tr { 
+            position: absolute;
+            top: -9999px;
+            left: -9999px;
+        }
+        
+        tr { border: 1px solid #ccc; }
+        
+        td { 
+            /* Behave  like a "row" */
+            border: none;
+            border-bottom: 1px solid #eee; 
+            position: relative;
+            padding-left: 30%; 
+        }
+        
+        td:before { 
+            /* Now like a table header */
+            position: absolute;
+            /* Top/left values mimic padding */
+            top: 6px;
+            left: 6px;
+            width: 100vw; 
+            /* padding-right: 10px;  */
+            white-space: nowrap;
+        }
 }
