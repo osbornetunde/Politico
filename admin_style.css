@@ -6,6 +6,7 @@
     --blue: #13abc4;
     --greyDarkfont: #6C7882;
     --greyLightfont: #BBC1CD;
+    --bg-white: #fff;
     --orange: #F4B320;
     --purple: #744BCE;
 }
@@ -268,6 +269,31 @@ input[type=file] {
     background: var(--greyLightBG);
     color: var(--blueDark);
 }
+
+/*=========tab in vote page============*/
+
+.tablink {
+    background-color: var(--bg-white);
+    color: var(--blueDark);
+    float: left;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 10px 9px;
+    font-size: 12px;
+    width: 20%;
+    border-radius: 15px 15px 0px 0px;
+  }
+  .tablink:hover {
+    background-color: var(--skyblue);
+  }
+  
+  .tabcontent {
+    /* color: yellow; */
+    display: none;
+    padding: 50px;
+    text-align: center;
+  }
 
 
   /*===============media Query==========*/

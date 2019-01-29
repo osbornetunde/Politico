@@ -36,7 +36,12 @@
             <p>Please vote for your desired Candidates</p>
         </div>
         <section>
-            <div class="container">
+          <button class="tablink" onclick="openOffice('president', this, '#7efaff')" id="default">President</button>
+          <button class="tablink" onclick="openOffice('governor', this, '#7efaff')">Governor</button>
+          <button class="tablink" onclick="openOffice('legislative', this, '#7efaff')">Legislative</button>
+          <button class="tablink" onclick="openOffice('lg', this, '#7efaff')">Local Government</button>
+            
+          <div class="container tabcontent" id="president">
             <table id="myTable" border-spacing="2">
                 <thead>
                 <tr id="titleRow">
@@ -82,9 +87,151 @@
                 </tbody>
             </table>
             </div>
-        </section>
+          
+            
+            <div class="container tabcontent" id="governor">
+            <table id="myTable" border-spacing="2">
+                <thead>
+                <tr id="titleRow">
+                    <th class="titles">Name</th>
+                    <th class="titles">Party</th>
+                    <th class="titles">Office</th>
+                    <th class="titles">Status</th>
+                </tr>
+                </thead>
+                <tbody id="tbody">
+                    <tr>
+                    <td>
+                        <img src="UI/buhari.jpg">
+                        Sanwo Olu</td>
+                    <td>APC</td>
+                    <td>Governor</td>
+                    <td><button>Vote</button></td>
+                    </tr>
+                    <tr>
+                    <td>
+                        <img src="UI/Atiku.jpg">
+                        Jimi Agbaje</td>
+                    <td>PDP</td>
+                    <td>Governor</td>
+                    <td><button>Vote</button></td>
+                    </tr>
+                    <tr>
+                    <td>
+                        <img src="UI/moghalu.jpeg">
+                        John Doe</td>
+                    <td>YPP</td>
+                    <td>Governor</td>
+                    <td><button>Vote</button></td>
+                    </tr>
+                    <tr>
+                    <td>
+                        <img src="UI/durotoye.jpeg">
+                        Jane Doe</td>
+                    <td>ACN</td>
+                    <td>Governor</td>
+                    <td><button>Vote</button></td>
+                    </tr>
+                </tbody>
+            </table>
+            </div>
+          
+            <div class="container tabcontent" id="legislative">
+            <table id="myTable" border-spacing="2">
+                <thead>
+                <tr id="titleRow">
+                    <th class="titles">Name</th>
+                    <th class="titles">Party</th>
+                    <th class="titles">Office</th>
+                    <th class="titles">Status</th>
+                </tr>
+                </thead>
+                <tbody id="tbody">
+                    <tr>
+                    <td>
+                        <img src="UI/buhari.jpg">
+                        Muhammadu Buhari</td>
+                    <td>APC</td>
+                    <td>Presidential</td>
+                    <td><button>Vote</button></td>
+                    </tr>
+                    <tr>
+                    <td>
+                        <img src="UI/Atiku.jpg">
+                        Atiku Abubakar</td>
+                    <td>PDP</td>
+                    <td>Presidential</td>
+                    <td><button>Vote</button></td>
+                    </tr>
+                    <tr>
+                    <td>
+                        <img src="UI/moghalu.jpeg">
+                        Kingsley Moghalu</td>
+                    <td>YPP</td>
+                    <td>Presidential</td>
+                    <td><button>Vote</button></td>
+                    </tr>
+                    <tr>
+                    <td>
+                        <img src="UI/durotoye.jpeg">
+                        Fela Durotoye</td>
+                    <td>ACN</td>
+                    <td>Presidential</td>
+                    <td><button>Vote</button></td>
+                    </tr>
+                </tbody>
+            </table>
+            </div>
+          
+          
+            <div class="container tabcontent" id="lg">
+            <table id="myTable" border-spacing="2">
+                <thead>
+                <tr id="titleRow">
+                    <th class="titles">Name</th>
+                    <th class="titles">Party</th>
+                    <th class="titles">Office</th>
+                    <th class="titles">Status</th>
+                </tr>
+                </thead>
+                <tbody id="tbody">
+                    <tr>
+                    <td>
+                        <img src="UI/buhari.jpg">
+                        Tunde Osborne</td>
+                    <td>APC</td>
+                    <td>Presidential</td>
+                    <td><button>Vote</button></td>
+                    </tr>
+                    <tr>
+                    <td>
+                        <img src="UI/Atiku.jpg">
+                        Bill Gate</td>
+                    <td>PDP</td>
+                    <td>Presidential</td>
+                    <td><button>Vote</button></td>
+                    </tr>
+                    <tr>
+                    <td>
+                        <img src="UI/moghalu.jpeg">
+                        Elon Musk</td>
+                    <td>YPP</td>
+                    <td>Presidential</td>
+                    <td><button>Vote</button></td>
+                    </tr>
+                    <tr>
+                    <td>
+                        <img src="UI/durotoye.jpeg">
+                        Jeff Bezo</td>
+                    <td>ACN</td>
+                    <td>Presidential</td>
+                    <td><button>Vote</button></td>
+                    </tr>
+                </tbody>
+            </table>
+            </div>
 
-        
+      </section>
     </section>
 <script src="app.js"></script>
 </body>
