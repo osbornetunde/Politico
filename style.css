@@ -28,22 +28,20 @@ img {
     width: 9rem;
     height: 4rem;
     position: absolute;
-    right: 20px;
-    top: 30px;
+    right: 8rem;
+    top: 2rem;
+    border-radius: 3px;
 }
 
 
 .firstpage .bg-text {
-    /* float: right; */
-    /* position: absolute; */
+    position: absolute;
     color: var(--bg-white);
-    right: 5px;
-    padding: 20px;
+    top: 20%;
+    right: 0.5rem;
     font-size: 2rem;
-    white-space: pre-wrap;        
-    word-wrap: break-word;
-    word-break: break-all;
-    overflow-wrap: break-word;
+    line-height: 3rem;
+    text-align: center;
 }
 
 .firstpage, .reset {
@@ -174,7 +172,8 @@ color: var(--blueDark);
 }
 
   /*=================Responsiveness For Sign In Page============*/
-@media only screen and (max-width:600px){
+  @media only screen and (max-width:760px),
+  (min-device-width: 768px) and (max-device-width: 1024px){
 
     img {
         width: 5rem;
@@ -239,5 +238,37 @@ color: var(--blueDark);
     .fas {
         float: right;
         font-size: 8px;
+    }
+
+    img {
+        width: 3rem;
+        height: 2rem;
+        right: 2rem;
+        top: 1rem;
+    }
+    
+    
+    .firstpage .bg-text {
+        top: 5%;
+        left: 0.1rem;
+        font-size: 0.8rem;
+        line-height: 1rem;
+        text-align: center;
+    }
+
+    #signin {
+        margin-top: 9%;
+    }
+}
+
+@media only screen  and (min-device-width: 1024px) and (max-device-width: 1024px) {
+    .firstpage .bg-text {
+        font-size: 2rem;
+        line-height: 2rem;
+        text-align: center;
+    }
+
+    #signin {
+        margin-top: 18%;
     }
 }
