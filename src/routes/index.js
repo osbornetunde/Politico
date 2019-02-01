@@ -31,4 +31,8 @@ router.get('/api/v1/offices', officesController.getAllOffices);
 
 router.get('/api/v1/offices/:id', officesController.getAOffice);
 
+// Create political Office
+router.post('/api/v1/offices', officesController.createAOffice);
+
+
 export default router;
