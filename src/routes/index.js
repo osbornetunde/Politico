@@ -27,4 +27,8 @@ router.patch('/api/v1/parties/:id', partiesController.editAParty);
 // get all political Offices
 router.get('/api/v1/offices', officesController.getAllOffices);
 
+// get a specific political office
+
+router.get('/api/v1/offices/:id', officesController.getAOffice);
+
 export default router;
