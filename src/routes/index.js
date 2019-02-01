@@ -24,4 +24,7 @@ router.delete('/api/v1/parties/:id', partiesController.deleteAParty);
 // Edit a political party
 router.patch('/api/v1/parties/:id', partiesController.editAParty);
 
+// get all political Offices
+router.get('/api/v1/offices', officesController.getAllOffices);
+
 export default router;
