@@ -1,0 +1,422 @@
+:root {
+    --skyblue: #7efaff;
+    --blueDark: #3161a3;
+    --softgreen: #f2efb6;
+    --greyLightBG: #F4F6F9;
+    --blue: #13abc4;
+    --greyDarkfont: #6C7882;
+    --greyLightfont: #BBC1CD;
+    --bg-white: #fff;
+    --orange: #F4B320;
+    --purple: #744BCE;
+}
+
+*{
+    box-sizing: border-box;
+    margin: 0px;
+    padding: 0px;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    background: var(--greyLightBG);
+}
+
+#sideMenu {
+    background: var(--skyblue);
+    width: 280px;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+}
+
+
+nav {
+    padding-top: 100px;
+    overflow: hidden;
+}
+
+nav  a {
+        display: block;
+        color: var(--blue);
+        text-decoration: none;
+        padding: 15px 30px;
+        font-weight: 300;
+        transition: all 0.5s ease-in-out;
+        position: relative;
+        cursor: pointer;
+}
+
+nav a > .fa-angle-right {
+    position: absolute;
+    right: 10px;
+    width: 5px;
+}
+
+nav a .fa {
+    color: var(--blue);
+    font-size: 1.4rem;
+    margin-right: 0.8rem;
+    display: inline-block;
+    width: 30px;
+    position: relative;
+    top: 2px;
+}
+
+nav a:hover {
+    background: var(--blueDark);
+    border-left: 5px solid var(--softgreen);
+    padding: 15px 30px 15px 25px;
+}
+nav a.active {
+    background: var(--blueDark);
+    border-left: 5px solid var(--softgreen);
+    padding: 15px 30px 15px 25px;
+}
+
+nav a.active .fa, nav a:hover .fa {
+    color: var(--softgreen);
+}
+
+/*========== Dropdown Content (Hidden by Default)=========== */
+.dropdown-content {
+    display: none;
+    min-width: 160px;
+    padding-left: 30px;
+  }
+  
+/*======= Links inside the dropdown ==========*/
+.dropdown-content a {
+    color: var(--blue);
+    padding: 5px 15px;
+    text-decoration: none;
+    display: block;
+    font-size: 0.7rem;
+}
+
+/*========= Change color of dropdown links on hover=========== */
+.dropdown-content a:hover {
+    color: var(--softgreen);
+}
+  
+.display {
+    display:block;
+}
+
+header {
+    width: 100vw;
+    padding: 10px;
+    background: #fff;
+    height: 60px;
+}
+
+header img {
+    width: 5rem;
+    height: 3rem;
+    float: right;
+}
+
+
+/*=================Content Area=============*/
+
+#content-area {
+    margin-left: 280px;
+    padding: 15px;
+    transition: all 500ms linear;
+}
+
+#content-area.active {
+    margin-left: 280px;
+}
+
+.heading h1 { 
+    color: var(--blueDark);
+    font-size: 1.4rem;
+    font-weight: 400;
+    margin-bottom: 10px;
+}
+
+.heading p {
+    color: var(--blue);
+    font-size: 0.8rem;
+    margin-bottom: 10px;
+}
+
+/*=====================Table Formatting==============*/
+
+.container {
+  display: block;
+  margin: 0 20px;
+  height: auto;
+  width: fit-content;
+  background: var(--greyLightBG);
+}
+
+thead {
+    width: 100%;
+}
+#myTable {
+  border-radius: 5px;
+  padding: 10px;
+  width: 60vw;
+  min-width: 50vw;
+  margin: 0 20px;
+  background: var(--greyLightBG);
+  color: var(--blueDark);
+  border-collapse: collapse;
+  border: 1px solid #eee;
+  border-bottom: 2px solid var(--skyblue);
+  box-shadow: 0px 0px 20px rgba(0,0,0,0.10),
+     0px 10px 20px rgba(0,0,0,0.05),
+     0px 20px 20px rgba(0,0,0,0.05),
+     0px 30px 20px rgba(0,0,0,0.05);
+}
+
+#titleRow .titles{
+    background: var(--blue);
+    text-transform: uppercase;
+    color: var(--blueDark);
+    font-weight: 600;
+    font-size: 13px;
+    padding: 10px 0;
+}
+
+
+  tr:hover {
+      background: #f4f4f4;
+  } 
+
+
+ td {
+    border: 1px solid #eee;
+    padding: 10px 35px;
+    border-collapse: collapse;
+}
+
+td img {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    margin-right: 5px;
+}
+
+td button, .containers button {
+    width: 60px;
+    height: 30px;
+    background-color: var(--blue);
+    border-radius: 5px;
+    color: var(--greyLightfont);
+    outline: none;
+}
+
+td button.delete {
+    background: rgba(255, 0, 0, 0.8);
+    color: var(--greyLightBG);
+}
+
+/*==============Create Page==============*/
+.containers {
+    width: 50%;
+    height: 50%;
+    background-color: var(--bg-white);
+    margin: 0 auto;
+    max-width: 290px;
+    padding: 20px;
+    border-radius: 5px;
+}
+
+.containers > label, a, p  {
+    color: var(--blueDark);
+    text-decoration: none;
+    font-size: 0.9rem;
+}
+
+input[type=text], textarea {
+    width: 100%;
+    padding: 10px;
+    margin: 5px 0 8px 0;
+    display: inline-block;
+    border: 1px solid #13abc4;
+    box-shadow: 1px 1px 1px 0 rgb(230, 229, 229) inset;
+    border-radius: 1rem;
+  }
+
+input[type=text]:focus,
+textarea:focus {
+    outline: 0;
+}
+
+input[type=file] {
+    color: var(--blueDark);
+    margin-bottom: 10px;
+}
+
+.containers button {
+    width: 80px;
+    margin-left: 80px;
+}
+
+.containers select {
+    width: 230px;
+    height: 35px;
+    border: 1px solid var(--blue);
+    margin: 10px;
+    color: var(--blueDark);
+    outline: none;
+}
+
+.containers select > option {
+    background: var(--greyLightBG);
+    color: var(--blueDark);
+}
+
+/*=========tab in vote page============*/
+
+#default {
+    margin-left: 50px;
+}
+
+.tablink {
+    background-color: var(--bg-white);
+    color: var(--blueDark);
+    float: left;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 10px 9px;
+    font-size: 12px;
+    width: 15%;
+    border-radius: 15px 15px 0px 0px;
+    margin-bottom: 20px;
+  }
+  .tablink:hover {
+    background-color: var(--skyblue);
+  }
+  
+  .tabcontent {
+    /* color: yellow; */
+    display: none;
+    /* padding: 50px; */
+    text-align: center;
+  }
+
+
+  /*===============media Query==========*/
+
+@media only screen and (max-width:760px), 
+(min-device-width: 768px) and (max-device-width: 1024px){
+    header {
+        width: 100%;
+    }
+    
+    header img {
+        display: none;
+    }
+
+    #sideMenu {
+        background: var(--skyblue);
+        width: 280px;
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: -280px;
+        transition: all 500ms linear;
+    }
+
+    #sideMenu.active {
+        left: 0px;
+    }
+
+    #sideMenu .toggle-btn {
+        position: absolute;
+        left: 290px;
+        top: 20px;
+    }
+    
+    #sideMenu .toggle-btn span {
+        display: block;
+        width: 30px;
+        height: 5px;
+        background: var(--blueDark);
+        margin: 5px 0px;
+        border-radius: 2px;
+    }
+
+    #content-area {
+        margin-left: 0;
+        padding: 0px;
+        transition: all 500ms linear;
+    }
+
+    .heading {
+        margin-left: 10px;
+    }
+    
+    #content-area.active {
+        margin-left: 280px;
+    }
+
+    .container {
+        margin: 0;
+    }
+
+    #myTable {
+        margin: 0;
+        width: 100vw;
+        min-width: 20vw;
+    }
+    
+
+        /* Force table to not be like tables anymore */
+        table, thead, tbody, th, td, tr { 
+            display: block; 
+        }
+
+        tbody {
+            margin-top: 30px;
+        }
+
+        
+        /* Hide table headers (but not display: none;, for accessibility) */
+        thead tr { 
+            position: absolute;
+            top: -9999px;
+            left: -9999px;
+        }
+        
+        tr { 
+            border: 1px solid #ccc; 
+        }
+        
+        td { 
+            /* Behave  like a "row" */
+            border: none;
+            border-bottom: 1px solid #eee; 
+            position: relative;
+            padding-left: 30%; 
+        }
+        
+        td:before { 
+            /* Now like a table header */
+            position: absolute;
+            /* Top/left values mimic padding */
+            top: 6px;
+            left: 6px;
+            width: 100vw; 
+            /* padding-right: 10px;  */
+            white-space: nowrap;
+        }
+
+        .tabcontent td {
+            padding-left: 0px;
+        }
+
+        #default {
+            margin-left: 0px;
+        }
+
+        .tablink {
+            padding: 5px 3px;
+            width: 25%;
+          }
+}
