@@ -10,6 +10,8 @@ const router = express.Router();
 
 router.get('/api/v1/parties', partiesController.getAllParty);
 
-/
+// Get a specific political party
+
+router.get('/api/v1/parties/:id', partiesController.getAParty);
 
 export default router;
