@@ -50,13 +50,30 @@ class PartiesController {
             name: req.body.name,
             hqAddress: req.body.hqAddress,
             logoUrl: req.body.logoUrl,
-        }
+        };
     
         parties.push(party);
         return res.status(201).json({
             status: '201',
             data: party
-        })
+        });
+    }
+
+    deleteAParty(req, res) {
+        const id = parseInt(req.params.id);
+        parties.map((party, index) => {
+            if(party.id === id) {
+                parties.splice(index, 1);
+                    return res.status(200).json({
+                        status: '200',
+                        message: 'Party deleted successfully',
+                    });
+            }
+        });
+        return res.status(404).json({
+            status: '404',
+            error: 'party not found'
+        });
     }
 
 }

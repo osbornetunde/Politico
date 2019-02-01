@@ -18,6 +18,8 @@ router.get('/api/v1/parties/:id', partiesController.getAParty);
 
 router.post('/api/v1/parties', partiesController.createAParty);
 
+// Delete a party
+router.delete('/api/v1/parties/:id', partiesController.deleteAParty);
 
 
 export default router;
