@@ -27,6 +27,38 @@ class PartiesController {
         });
     }
 
+    createAParty(req, res) {
+        if(!req.body.name) {
+            return res.status(400).json({
+                status: '400',
+                error: 'name is required'
+            });
+        } else if(!req.body.hqAddress) {
+            return res.status(400).json({
+                status: '400',
+                error: 'Headquarter Address is required'
+            });
+        } else if(!req.body.logoUrl){
+            return res.status(400).json({
+                status: '400',
+                error: 'logoUrl is required'
+            });
+        }
+    
+        const party = {
+            id: parties.length + 1,
+            name: req.body.name,
+            hqAddress: req.body.hqAddress,
+            logoUrl: req.body.logoUrl,
+        }
+    
+        parties.push(party);
+        return res.status(201).json({
+            status: '201',
+            data: party
+        })
+    }
+
 }
 
     
