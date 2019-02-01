@@ -14,4 +14,10 @@ router.get('/api/v1/parties', partiesController.getAllParty);
 
 router.get('/api/v1/parties/:id', partiesController.getAParty);
 
+//Create political party
+
+router.post('/api/v1/parties', partiesController.createAParty);
+
+
+
 export default router;
