@@ -104,7 +104,7 @@ input[type=tel] {
     display: inline-block;
     border: 1px solid #13abc4;
     box-shadow: 1px 1px 1px 0 rgb(230, 229, 229) inset;
-    border-radius: 1rem;
+    border-radius: 0.2rem;
   }
 
   input[type=text]:focus, 

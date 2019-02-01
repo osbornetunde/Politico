@@ -191,6 +191,8 @@ thead {
     border: 1px solid #eee;
     padding: 10px 35px;
     border-collapse: collapse;
+    /* display: flex; */
+    /* align-items: flex-end; */
 }
 
 td img {
@@ -198,6 +200,17 @@ td img {
     height: 30px;
     border-radius: 50%;
     margin-right: 5px;
+}
+
+td .vote {
+    margin-left: 2rem;
+    position: relative;
+    left: 1rem;
+}
+
+td span {
+    margin-left: 2rem;
+    text-justify: left;
 }
 
 td button, .containers button {
@@ -212,6 +225,7 @@ td button, .containers button {
 td button.delete {
     background: rgba(255, 0, 0, 0.8);
     color: var(--greyLightBG);
+    margin-left: 10rem;
 }
 
 /*==============Create Page==============*/
@@ -232,13 +246,14 @@ td button.delete {
 }
 
 input[type=text], textarea {
-    width: 100%;
+    width: 95%;
+    height: 2.2rem;
     padding: 10px;
-    margin: 5px 0 8px 0;
+    margin: 5px 0 8px 10px;
     display: inline-block;
     border: 1px solid #13abc4;
     box-shadow: 1px 1px 1px 0 rgb(230, 229, 229) inset;
-    border-radius: 1rem;
+    border-radius: 0.2rem;
   }
 
 input[type=text]:focus,
@@ -257,7 +272,7 @@ input[type=file] {
 }
 
 .containers select {
-    width: 230px;
+    width: 14.8rem;
     height: 35px;
     border: 1px solid var(--blue);
     margin: 10px;
@@ -419,4 +434,7 @@ input[type=file] {
             padding: 5px 3px;
             width: 25%;
           }
+        select {
+            width: 95% !important;
+        }
 }
