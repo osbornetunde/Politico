@@ -21,5 +21,7 @@ router.post('/api/v1/parties', partiesController.createAParty);
 // Delete a party
 router.delete('/api/v1/parties/:id', partiesController.deleteAParty);
 
+// Edit a political party
+router.patch('/api/v1/parties/:id', partiesController.editAParty);
 
 export default router;
