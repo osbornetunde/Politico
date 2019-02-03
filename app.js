@@ -8,10 +8,11 @@ const app = express();
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(router);
 
+const port = process.env.PORT || 5000;
 
 
-app.listen( process.env.PORT || 5000 , () => {
-    console.log(`server running on port ${PORT}`)
+app.listen(port, () => {
+    console.log(`server running on port ${port}`)
 });
 
 module.exports = app
