@@ -1,5 +1,8 @@
 import express from 'express';
-import { parties, offices } from '../db/db';
+import {
+    parties,
+    offices
+} from '../db/db';
 import partiesController from '../controllers/parties';
 import officesController from '../controllers/offices';
 
