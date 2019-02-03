@@ -10,11 +10,12 @@ app.use(router);
 
 const port = process.env.PORT || 5000;
 
-// set up template engine
-app.set('view engine', 'ejs');
 
-//static files
-app.use(express.static('./UI'));
+
+app.get('/', function(req, res){
+    res.redirect('/Politico');
+ });
+
 app.listen(port, () => {
     console.log(`server running on port ${port}`)
 });
