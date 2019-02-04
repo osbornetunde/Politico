@@ -12,10 +12,6 @@ const port = process.env.PORT || 5000;
 
 
 
-app.get('/', function(req, res){
-    res.redirect('/Politico');
- });
-
 app.listen(port, () => {
     console.log(`server running on port ${port}`)
 });
