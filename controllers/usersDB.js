@@ -1,18 +1,24 @@
 import db from '../db/index.js';
-import bcrypt from 'bcryptjs';
+import Helper from '.helper';
+
 
 class Users {
-  
-  const passwordHash = (password, callback) => {
-    brcypt.hash(password, bcrypt.genSalt(10), function(err, hash) {
-        if (err) {
-              return null
-        } else {
-            return callback(hash);
-        }
-    })
-}
+
   static createAccount(req, res) {
+    if (!req.body.email || !req.body.password) {
+      return res.status(400).send({
+        status: '400',
+        message : 'Please fill the required fields'
+      })
+    }
+    if (!Helper.isValidEmail(req.body.email)) {
+      return res.status(400).send({
+        status: 400,
+        message: 'Plaese enter a valid email'
+      });
+    }
+
+    const passwordHash = Helper.hashPassword(req.body.password);
     const text = `INSERT INTO
       users(firstname, lastname, othername, email, phoneNumber, passportUrl, password)
       VALUES($1, $2, $3, $4, $5, $6)
@@ -23,23 +29,29 @@ class Users {
       req.body.othername, 
       req.body.email, 
       req.body.phoneNumber, 
-      req.body.passportUrl
+      req.body.passportUrl,
+      passwordHash
     ];
 
-    passwordHash(req.body.password, ((hash) => {
           try {
             const { rows } =  db.query(text, values);
+            const token = Helper.generateToken(rows[0].id);
             return res.status(201).send({
               status: '201',
-              data: rows[0]
+              data: [token, rows[0]]
             });
         } catch(error) {
+          if(error.routine === '_bt_check_unique') {
+            return res.status(400).send({
+              status: '400',
+              message: 'User with that email already exists'
+            })
+          }
           return res.status(400).send({
             status: '400',
             message: 'Bad request'
           });
       }
-    }));
 }
   
   

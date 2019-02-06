@@ -5,8 +5,8 @@ import Users from '../controllers/usersDB';
 const router = express.Router();
 
 
-//create users
-router.post('/api/v1/users', Users.createAccount);
+//create users account
+router.post('/auth/signup',  Users.createAccount);
 
 
 
