@@ -34,7 +34,7 @@ client.query('SELECT NOW()', (err, res) => {
  * Create Tables
  */
 const createTables = () => {
-const queryText = 
+const queryUser = 
     `CREATE TABLE IF NOT EXISTS
         users(
             id SERIAL ,
@@ -46,8 +46,24 @@ const queryText =
             passportUrl TEXT,
             isAdmin BOOL DEFAULT 'f'
     )`;
+const queryParty = 
+`CREATE TABLE IF NOT EXISTS
+    parties(
+        id SERIAL,
+        name VARCHAR(50) UNIQUE NOT NULL PRIMARY KEY,
+        hqaddress VARCHAR(50) UNIQUE NOT NULL,
+        logoUrl TEXT
+)`;
 
-    pool.query(queryText)
+const queryOffice = 
+    `CREATE TABLE IF NOT EXISTS
+        offices(
+            id SERIAL PRIMARY KEY,
+            name VARCHAR(50) UNIQUE NOT NULL,
+            type VARCHAR(50)  NOT NULL
+    )`;
+
+    pool.query(queryUser, queryParty, queryOffice)
     .then((res) => {
       console.log(res);
       pool.end();
@@ -62,8 +78,10 @@ const queryText =
  * Drop Tables
  */
 const dropTables = () => {
-  const queryText = 'DROP TABLE IF EXISTS users';
-  pool.query(queryText)
+  const queryUser = 'DROP TABLE IF EXISTS users';
+  const queryParty = 'DROP TABLE IF EXISTS parties';
+  const queryOffice = 'DROP TABLE IF EXISTS offices';
+  pool.query(queryUser, queryParty, queryOffice)
     .then((res) => {
       console.log(res);
       pool.end();
