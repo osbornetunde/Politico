@@ -54,39 +54,6 @@ class Users {
       }
 }
   
-  static login(req, res) {
-    if (!req.body.email || req.body.password) {
-      return res.status(400).send({
-        status: '400',
-        message: 'Please fill the required fields'
-      });
-    }
-    if (!Helper.isValidEmail(req.body.email)) {
-      return res.status(400).send({
-        status: '400',
-        message: 'Please enter a valid email address'
-      })
-    }
-
-    const text = 'SELECT * FROM users WHERE email = $1';
-    try {
-      const { rows } = db.query(text, [req.body.email]);
-      if (!rows[0]) {
-        return res.status(400).send({
-          status: '400',
-          message: 'The credentials you provided are incorrect'
-        })
-      }
-      const token = Helper.generateToken(rows[0].id);
-      return res.status(200).send({
-        status: '200',
-        data: { token }
-      });
-    } catch(error) {
-      return res.status(400).send(error);
-    }
-  }
-  
 }
 
 export default Users;
