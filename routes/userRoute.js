@@ -9,5 +9,4 @@ const router = express.Router();
 router.post('/auth/signup',  Users.createAccount);
 
 
-
 export default router;
