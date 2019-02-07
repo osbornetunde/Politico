@@ -113,7 +113,8 @@ header {
 header img {
     width: 5rem;
     height: 3rem;
-    float: right;
+    position: relative;
+    left:300px;
 }
 
 
