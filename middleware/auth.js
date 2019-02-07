@@ -2,7 +2,7 @@ import jwt from 'jsonwebtoken';
 import db from '../db/index';
 
 
-class Auth = {
+class Auth {
 
     //verify token
     static verifyToken(req, res, next) {
@@ -31,4 +31,4 @@ class Auth = {
     }
 }
 
-export default Auth
+export default Auth;

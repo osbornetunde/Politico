@@ -3,13 +3,14 @@ import 'babel-polyfill';
 import router from './routes/index';
 import bodyParser from 'body-parser';
 import dotenv from 'dotenv';
+import Auth from './middleware/auth';
 
 
 dotenv.config();
 const app = express();
 
 app.use(bodyParser.urlencoded({ extended: false }));
-app.use(router);
+app.use(router, Auth.verifyToken);
 
 const port = process.env.PORT || 5000;
 
