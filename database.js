@@ -49,7 +49,29 @@ const queryOffice =
             type VARCHAR(50)  NOT NULL
     )`;
 
-    pool.query(queryUser, queryParty, queryOffice)
+    const queryPetition = 
+    `CREATE TABLE IF NOT EXISTS
+        petitions(
+            id SERIAL,
+            "createdOn" TIMESTAMP default current_timestamp,
+            "createdBy" REFERENCES users(id),
+            office INTEGER UNIQUE REFERENCES offices(id),
+            body VARCHAR
+            PRIMARY KEY (users, offices)
+    )`;
+
+    const queryVote = 
+    `CREATE TABLE IF NOT EXISTS
+        votes(
+            id SERIAL,
+            "createdOn" TIMESTAMP default current_timestamp,
+            "createdBy" int references users(id),
+            office INTEGER UNIQUE REFERENCES offices(id),
+            candidate INTEGER REFERENCES candidates(candidate),
+            PRIMARY KEY (candidate, office)
+    )`;
+
+    pool.query(queryUser, queryParty, queryOffice, queryPetition, queryVote)
     .then((res) => {
       console.log(res);
       pool.end();
@@ -67,7 +89,9 @@ const dropTables = () => {
   const queryUser = 'DROP TABLE IF EXISTS users';
   const queryParty = 'DROP TABLE IF EXISTS parties';
   const queryOffice = 'DROP TABLE IF EXISTS offices';
-  pool.query(queryUser, queryParty, queryOffice)
+  const queryPetition = 'DROP TABLE IF EXISTS petitions';
+  const queryVote = 'DROP TABLE IF EXISTS votes';
+  pool.query(queryUser, queryParty, queryOffice, queryPetition, queryVote)
     .then((res) => {
       console.log(res);
       pool.end();
