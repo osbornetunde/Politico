@@ -1,25 +1,25 @@
-import bcrypt from 'bcrypt';
+import bcrypt from 'bcryptjs';
 import jwt from 'jsonwebtoken';
 
 
-class Helper {
+const Helper = {
 
     //hash password
-    static hashPassword(password) {
-        return brcypt.hash(password, bcrypt.genSalt(10))
-    }
+     hashPassword(password) {
+        return bcrypt.hashSync(password, bcrypt.genSaltSync(8))
+    },
 
     //compare password
-    static comparePassword(hashPassword, password) {
-        return bcrypt.compare(password, hashPassword)
-    }
+    comparePassword(hashPassword, password) {
+        return bcrypt.compareSync(password, hashPassword)
+    },
     
     //validemail helper method
     isValidEmail(email) {
         return /\S+@\S+\.\S+/.test(email);
-    }
+    },
 
-    static generateToken(id) {
+     generateToken(id) {
         const token = jwt.sign({
             userId: id
         },

@@ -2,7 +2,7 @@
 // import dotenv from 'dotenv';
 
 
-const { Pool, Client } = require('pg');
+const { Pool } = require('pg');
 const dotenv = require('dotenv');
 
 dotenv.config();
@@ -14,20 +14,6 @@ pool.on('connect', () => {
     console.log('connected to the db');
 })
 
-pool.query('SELECT NOW()', (err, res) => {
-  console.log(err, res)
-  pool.end()
-})
-
-const client = new Client({
-  connectionString: connectionString,
-})
-client.connect()
-
-client.query('SELECT NOW()', (err, res) => {
-  console.log(err, res)
-  client.end()
-})
 
 
 /**
@@ -49,10 +35,10 @@ const queryUser =
 const queryParty = 
 `CREATE TABLE IF NOT EXISTS
     parties(
-        id SERIAL,
-        name VARCHAR(50) UNIQUE NOT NULL PRIMARY KEY,
-        hqaddress VARCHAR(50) UNIQUE NOT NULL,
-        logoUrl TEXT
+        id SERIAL PRIMARY KEY,
+        name VARCHAR(50) UNIQUE NOT NULL,
+        "hqAddress" VARCHAR(50) UNIQUE NOT NULL,
+        "logoUrl" TEXT
 )`;
 
 const queryOffice = 
