@@ -1,8 +1,8 @@
 import db from '../db/index.js';
 
-class PartiesDBController {
+const Parties = {
   
-  static createAParty(req, res) {
+  async createAParty(req, res) {
     const text = `INSERT INTO
       parties(name, hqAdress, logoUrl)
       VALUES($1, $2, $3)
@@ -14,7 +14,7 @@ class PartiesDBController {
     ];
 
     try {
-      const { rows } = db.query(text, values);
+      const { rows } = await db.query(text, values);
       return res.status(201).send({
         status: '201',
         data: rows[0]
@@ -27,10 +27,10 @@ class PartiesDBController {
     }
   },
   
-  static getAllParties(req, res) {
+  async getAllParties(req, res) {
     const findAllParties = 'SELECT * FROM parties';
     try {
-      const { rows, rowCount } = db.query(findAllParties)
+      const { rows, rowCount } = await db.query(findAllParties)
       return res.status(200).json({
                     status: '200',
                     data: { rows, rowCount }
@@ -44,10 +44,10 @@ class PartiesDBController {
   },
   
 
-  static getParty(req, res) {
+  async getParty(req, res) {
     const text = 'SELECT * FROM parties WHERE id = $1';
     try {
-      const { rows } =  db.query(text, [req.params.id]);
+      const { rows } =  await db.query(text, [req.params.id]);
       if (!rows[0]) {
         return res.status(404).send({
           status: '404',
@@ -67,12 +67,12 @@ class PartiesDBController {
   },
   
 
-  static editParty(req, res) {
+  async editParty(req, res) {
     const findOneQuery = 'SELECT * FROM parteis WHERE id=$1';
     const updateOneQuery =`UPDATE parties
       SET name=$1, hqAddress=$2, logourl=$3,WHERE id=$5 returning *`;
     try {
-      const { rows } =  db.query(findOneQuery, [req.params.id]);
+      const { rows } =  await db.query(findOneQuery, [req.params.id]);
       if(!rows[0]) {
         return res.status(404).send({
           status: '404',
@@ -95,10 +95,10 @@ class PartiesDBController {
     }
   },
   
-  static deleteParty(req, res) {
+  async deleteParty(req, res) {
     const deleteQuery = 'DELETE FROM parties WHERE id=$1 returning *';
     try {
-      const { rows } =  db.query(deleteQuery, [req.params.id]);
+      const { rows } =  await db.query(deleteQuery, [req.params.id]);
       if(!rows[0]) {
         return res.status(404).send({
           status: '404',
@@ -115,7 +115,7 @@ class PartiesDBController {
   }
 }
 
-export default PartiesDBController;
+export default Parties;
 
 
 
