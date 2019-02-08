@@ -15,7 +15,7 @@ class OfficesDBController {
     try {
         const { rows } = db.query(text, values);
         return res.status(201).send({
-            status: '201'
+            status: '201',
             data: rows[0]
         });
     } catch(error) {

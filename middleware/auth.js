@@ -2,11 +2,11 @@ import jwt from 'jsonwebtoken';
 import db from '../db/index';
 
 
-class Auth {
+const Auth = {
 
     //verify token
-    static verifyToken(req, res, next) {
-        const token = req.header['x-access-token'];
+     async verifyToken(req, res, next) {
+        const token = req.headers['x-access-token'];
         if(!token) {
             return res.status(400).send({
                 status: '400',
@@ -14,9 +14,9 @@ class Auth {
             });
         }
         try {
-            const decoded = jwt.verify(token, process.env.SECRET);
+            const decoded = await jwt.verify(token, process.env.SECRET);
             const text = 'SELECT * from users WHERE id = $1';
-            const { rows } = db.query(text, [decoded.userId]);
+            const { rows } = await db.query(text, [decoded.userId]);
             if(!rows[0]) {
                 return res.status(400).send({
                     status: '400',
